@@ -61,6 +61,20 @@
                             </div>
                         </div>
 
+                          <div class="form-group row">
+                            <label for="captcha" class="col-md-4 col-form-label text-md-right">驗證碼</label>
+
+                            <div class="col-md-6">
+                              <input type="text" name="captcha">
+                              <img id="catchaImg" class="thumbnail" src="{{ captcha_src('flat') }}" onclick="this.src='/captcha/flat?'+Math.random()">
+                              @error('captcha')
+                              <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                              </span>
+                              @enderror
+                            </div>
+                          </div>
+
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
